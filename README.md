@@ -93,6 +93,41 @@ Comming soon !!
 Comming soon !!
 
 ## 🚀 Getting Started
+### -Prerequirements:
+  Docker and Docker Compose installed
+  Python 3.8+ (tested with Python 3.13)
+  Internet access for Yahoo Finance API
+
+### -Installation
+  #### 1-Clone the Repository:
+    git clone https://github.com/FinanceLake/financelake.git
+    cd financelake
+  
+  #### 2-Set Up Environment Variables:
+    Copy .env.example to .env:
+      copy .env.example .env
+
+  #### 3-Start Docker Services:
+    Run Kafka, Zookeeper, PostgreSQL, Spark, and Superset:
+      docker-compose up -d
+    Verify services:
+      docker ps
+
+  #### 4-Create Kafka Topic:
+    docker exec -it financelake-kafka-1 kafka-topics.sh --create --topic stock-data --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+  #### 5-Install Python Dependencies:
+    Create a virtual environment:
+      python -m venv venv
+    Install dependencies:
+      pip install -r requirements.txt
+
+### -Running the Stock Producer
+  Ensure Docker Services are Running:
+    docker ps
+  Run the Script:
+    python stock_producer.py
+    (you should see the fetched data and messages)
 
 ### Installation
 You can set up Apache DevLake by following our step-by-step instructions for either Docker Compose or Helm. Feel free to [ask the community](#💙-community) if you get stuck at any point.
