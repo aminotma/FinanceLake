@@ -1,0 +1,12 @@
+# Requirements for FinanceLake Data Storage Layer
+# This file contains the Python packages needed for the data storage implementation
+
+# Apache Spark for Python - Core processing engine
+pyspark==4.0.1
+
+# Delta Lake for Python - ACID transactions on data lakes
+delta-spark==4.0.0
+
+# Optional: Additional packages for enhanced functionality
+# pandas>=1.5.0  # For data manipulation (if needed)
+# numpy>=1.21.0  # For numerical operations (if needed)
